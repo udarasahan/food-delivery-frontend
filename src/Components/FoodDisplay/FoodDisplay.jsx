@@ -20,7 +20,7 @@ const {food_list} = useContext(StoreContext)
   )
 }
 
-FoodDisplay.PropTypes = {
+FoodDisplay.propTypes = {
     category: PropTypes.string.isRequired,
 }
 
