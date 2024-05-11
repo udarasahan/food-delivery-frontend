@@ -1,4 +1,4 @@
-import './ExploreMenu.css';
+/*import './ExploreMenu.css';
 import { menu_list } from '../../assets/assets';
 import PropTypes from 'prop-types'
 
@@ -23,4 +23,4 @@ const ExploreMenu = ({ category, setCategory }) => (
   </div>
   
 )
- export default ExploreMenu;
+ export default ExploreMenu;*/

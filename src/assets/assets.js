@@ -19,12 +19,18 @@ import food_6 from './food_6.jpg';
 import food_7 from './food_7.jpg';
 import food_8 from './food_8.jpg';
 
+import add_icon_white from './add_icon_white.jpg';
+import remove_icon_red from './red_remove_icon.png';
+import add_icon_green from './add_icon_green.jpg'
 
 export const assets = {
     
     search_icon,
     bucket,
     header_image,
+    add_icon_white,
+    remove_icon_red,
+    add_icon_green,
 }
 
 export const menu_list = [

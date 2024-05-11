@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 //import Cart from './Pages/Cart/Cart.jsx';
 //import PlaceOrder from './Pages/Place Order/PlaceOrder.jsx'
 import './index.css';
-import StoreContextProvider from './Context/Context.jsx';
+import StoreContextProvider from './Context/StoreContext.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
