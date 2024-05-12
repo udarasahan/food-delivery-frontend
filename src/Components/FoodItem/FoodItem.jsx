@@ -34,7 +34,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
 }
 
 FoodItem.propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
