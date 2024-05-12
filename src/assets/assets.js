@@ -72,7 +72,7 @@ export const menu_list = [
 
 export const food_list = [
     {
-        _id: "1",
+        id: "1",
         name: "Greek Salad",
         image: food_1,
         price: 1200,
@@ -80,7 +80,7 @@ export const food_list = [
         category: "salad",
     },
     {
-        _id: "2",
+        id: "2",
         name: "Chicken Tikka Roll",
         image: food_2,
         price: 1500,
@@ -88,7 +88,7 @@ export const food_list = [
         category: "Rolls",
     },
     {
-        _id: "3",
+        id: "3",
         name: "Classic Club Sandwich",
         image: food_3,
         price: 1300,
@@ -96,7 +96,7 @@ export const food_list = [
         category: "Sandwiches",
     },
     {
-        _id: "4",
+        id: "4",
         name: "Chocolate Brownie Sundae",
         image: food_4,
         price: 1800,
@@ -104,7 +104,7 @@ export const food_list = [
         category: "Desserts",
     },
     {
-        _id: "5",
+        id: "5",
         name: "Red Velvet Cake",
         image: food_5,
         price: 2000,
@@ -112,7 +112,7 @@ export const food_list = [
         category: "Cake",
     },
     {
-        _id: "6",
+        id: "6",
         name: "Vegitable Biryani",
         image: food_6,
         price: 1400,
@@ -120,7 +120,7 @@ export const food_list = [
         category: "Pure Veg",
     },
     {
-        _id: "7",
+        id: "7",
         name: "Spaghetti Carbonara",
         image: food_7,
         price: 1600,
@@ -128,7 +128,7 @@ export const food_list = [
         category: "Pasta",
     },
     {
-        _id: "8",
+        id: "8",
         name: "Chow main",
         image: food_8,
         price: 1450,
