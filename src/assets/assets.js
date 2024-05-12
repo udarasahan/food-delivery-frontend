@@ -21,7 +21,8 @@ import food_8 from './food_8.jpg';
 
 import add_icon_white from './add_icon_white.jpg';
 import remove_icon_red from './red_remove_icon.png';
-import add_icon_green from './add_icon_green.jpg'
+import add_icon_green from './add_icon_green.jpg';
+import star_rating from './rating_stars.png';
 
 export const assets = {
     
@@ -31,6 +32,7 @@ export const assets = {
     add_icon_white,
     remove_icon_red,
     add_icon_green,
+    star_rating,
 }
 
 export const menu_list = [
