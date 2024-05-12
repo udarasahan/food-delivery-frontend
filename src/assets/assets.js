@@ -23,6 +23,11 @@ import add_icon_white from './add_icon_white.jpg';
 import remove_icon_red from './red_remove_icon.png';
 import add_icon_green from './add_icon_green.jpg';
 import star_rating from './rating_stars.png';
+import facebook_icon from './facebook-icon.png';
+import twitter_icon from './twitter-icon.png';
+import linkedin_icon from './linkedin-icon.png';
+import play_store_icon from './play-store-icon.png';
+import app_store_icon from './app-store-icon.png';
 
 export const assets = {
     
@@ -33,6 +38,11 @@ export const assets = {
     remove_icon_red,
     add_icon_green,
     star_rating,
+    facebook_icon,
+    twitter_icon,
+    linkedin_icon,
+    play_store_icon,
+    app_store_icon,
 }
 
 export const menu_list = [
@@ -77,7 +87,7 @@ export const food_list = [
         image: food_1,
         price: 1200,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "salad",
+        category: "Salad",
     },
     {
         id: "2",
@@ -93,7 +103,7 @@ export const food_list = [
         image: food_3,
         price: 1300,
         description: "Layers of toasted bread stacked with turkey, ham, bacon, lettuce, tomato, and mayonnaise, served with a side of crispy fries.",
-        category: "Sandwiches",
+        category: "Sandwich",
     },
     {
         id: "4",

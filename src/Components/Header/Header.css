@@ -3,7 +3,7 @@
     width: 100%;
     margin: 30px auto;
     background: url('/src/assets/header_image.jpg') no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: relative;  
 }
 
