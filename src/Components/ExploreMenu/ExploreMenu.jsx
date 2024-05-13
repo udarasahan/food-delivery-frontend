@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const ExploreMenu = ({ category, setCategory }) => {
   return (
     <div>
-      <div className='explore-menu' id='explore_menu'>
+      <div className='explore-menu' id='explore-menu'>
         <h1>Explore Our Menu</h1>
         <p className='explore-menu-text'>Choose from a diverse menu featuring a tantalizing array of culinary delights, each dish crafted with care to satisfy your every craving.</p>
         <div className='explore-menu-list'>
