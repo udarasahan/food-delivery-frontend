@@ -28,6 +28,7 @@ import twitter_icon from './twitter-icon.png';
 import linkedin_icon from './linkedin-icon.png';
 import play_store_icon from './play-store-icon.png';
 import app_store_icon from './app-store-icon.png';
+import cross_icon from './cross-icon.png';
 
 export const assets = {
     
@@ -43,6 +44,7 @@ export const assets = {
     linkedin_icon,
     play_store_icon,
     app_store_icon,
+    cross_icon,
 }
 
 export const menu_list = [
