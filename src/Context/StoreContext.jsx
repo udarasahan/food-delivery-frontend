@@ -8,15 +8,29 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
 
     const addToCart = (itemID) => {
-        if (!cartItems[itemID]) {
-            setCartItems((prev) => ({ ...prev, [itemID]: 1 }));
-        } else {
-            setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] + 1 }));
-        }
+        setCartItems((prev) => {
+            const newCount = (prev[itemID] || 0) + 1;
+            return { ...prev, [itemID]: newCount };
+        });
     };
 
     const removeFromCart = (itemID) => {
-        setCartItems((prev) => ({ ...prev, [itemID]: prev[itemID] - 1 }));
+        setCartItems((prev) => {
+            const newCount = (prev[itemID] || 1) - 1;
+            const updatedCart = { ...prev, [itemID]: newCount > 0 ? newCount : 0 };
+            return updatedCart;
+        });
+    };
+
+    const getTotalCartAmount = () => {
+        let totalAmount = 0;
+        for (const item in cartItems) {
+            if (cartItems[item] > 0) {
+                let itemInfo = food_list.find((product) => product.id === item);
+            totalAmount += itemInfo.price * cartItems[item];
+            }
+        }
+        return totalAmount;
     };
 
     useEffect(() => {
@@ -29,6 +43,7 @@ const StoreContextProvider = (props) => {
         setCartItems,
         addToCart,
         removeFromCart,
+        getTotalCartAmount,
     };
 
     return (

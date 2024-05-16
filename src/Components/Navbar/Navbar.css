@@ -11,16 +11,22 @@
     font-weight: 500;
 }
 
+.logo:hover {
+    transform: scale(1.05);
+}
+
 .navbar-menu {
     display: flex;
     list-style: none;
     gap: 30px;
     color: black;
     font-size: 18px;
+    
 }
 
 .search_icon {
     max-width: 40px;
+    cursor: pointer;
 }
 
 .bucket {
@@ -59,6 +65,7 @@
 
 .navbar-search-icon {
     position: relative;
+    cursor: pointer;
 }
 
 .navbar-search-icon .dot {
