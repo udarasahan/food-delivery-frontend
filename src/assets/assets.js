@@ -1,5 +1,6 @@
 import search_icon from './search_icon.png';
 import bucket from './bucket.png';
+import profileImage from './profile-image.png';
 import header_image from './header_image.jpg';
 import menu_1 from './menu_1.jpg'
 import menu_2 from './menu_2.jpg'
@@ -9,6 +10,8 @@ import menu_5 from './menu_5.jpg'
 import menu_6 from './menu_6.jpg'
 import menu_7 from './menu_7.jpg'
 import menu_8 from './menu_8.jpg'
+import bagIcon from './bag.png';
+import logoutIcon from './logout.png'
 
 import food_1 from './food_1.jpeg';
 import food_2 from './food_2.jpg';
@@ -45,6 +48,10 @@ export const assets = {
     play_store_icon,
     app_store_icon,
     cross_icon,
+    profileImage,
+    bagIcon,
+    logoutIcon,
+
 }
 
 export const menu_list = [
