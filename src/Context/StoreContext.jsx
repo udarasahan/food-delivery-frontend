@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types';
-import { food_list } from "../assets/assets";
+import axios from "axios";
 
 export const StoreContext = createContext(null);
 
@@ -8,7 +8,8 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const url = "http://localhost:4000";
     const [token, setToken] = useState("");
-    const [food_list, setFoodList] = useState([])
+    const [food_list, setFoodList] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const addToCart = (itemID) => {
         setCartItems((prev) => {
@@ -29,18 +30,47 @@ const StoreContextProvider = (props) => {
         let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                let itemInfo = food_list.find((product) => product.id === item);
-            totalAmount += itemInfo.price * cartItems[item];
+                let itemInfo = food_list.find((product) => product._id === item);
+                if (itemInfo) {
+                    totalAmount += itemInfo.price * cartItems[item];
+                } else {
+                    console.warn(`Item with ID ${item} not found in food_list.`);
+                }
             }
         }
         return totalAmount;
     };
 
-    useEffect(() => {
-        if (localStorage.getItem("token")) {
-            setToken(localStorage.getItem("token"))
+    const fetchFoodList = async () => {
+        try {
+            const response = await axios.get(`${url}/api/food/list`);
+            setFoodList(response.data.data);
+            setLoading(false);
+        } catch (error) {
+            console.error("Failed to fetch food list:", error);
+            setLoading(false);
         }
+    };
+
+    useEffect(() => {
+        async function loadData() {
+            setLoading(true);
+            await fetchFoodList();
+            const storedToken = localStorage.getItem("token");
+            if (storedToken) {
+                setToken(storedToken);
+            }
+        }
+        loadData();
     }, []);
+
+    useEffect(() => {
+        console.log("Cart Items updated:", cartItems);
+    }, [cartItems]);
+
+    useEffect(() => {
+        console.log("Food List updated:", food_list);
+    }, [food_list]);
 
     const contextValue = {
         food_list,
@@ -51,8 +81,8 @@ const StoreContextProvider = (props) => {
         getTotalCartAmount,
         url,
         token,
-        setToken
-
+        setToken,
+        loading
     };
 
     return (

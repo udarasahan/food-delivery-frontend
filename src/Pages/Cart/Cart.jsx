@@ -4,14 +4,20 @@ import { StoreContext } from '../../Context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, loading } = useContext(StoreContext);
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log("Cart Items:", cartItems);
-    console.log("Food List:", food_list);
-    console.log("Total Cart Amount:", getTotalCartAmount());
-  }, [cartItems, food_list, getTotalCartAmount]);
+    if (!loading) {
+      console.log("Cart Items:", cartItems);
+      console.log("Food List:", food_list);
+      console.log("Total Cart Amount:", getTotalCartAmount());
+    }
+  }, [cartItems, food_list, getTotalCartAmount, loading]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className='cart'>
@@ -27,16 +33,16 @@ const Cart = () => {
         <br />
         <hr />
         {food_list.map((item) => {
-          if (cartItems[item.id] > 0) {
+          if (cartItems[item._id] > 0) {
             return (
-              <div key={item.id}>
+              <div key={item._id}>
                 <div className='cart-items-title cart-items-item'>
-                  <img src={item.image} alt="" />
+                  <img src={url + "/images/" + item.image} alt="" />
                   <p>{item.name}</p>
-                  <p>{item.price}</p>
-                  <p>{cartItems[item.id]}</p>
-                  <p>{item.price * cartItems[item.id]}</p>
-                  <p className='remove-icon' onClick={() => removeFromCart(item.id)}>X</p>
+                  <p>Rs.{item.price}</p>
+                  <p>{cartItems[item._id]}</p>
+                  <p>Rs.{item.price * cartItems[item._id]}</p>
+                  <p className='remove-icon' onClick={() => removeFromCart(item._id)}>X</p>
                 </div>
                 <hr />
               </div>

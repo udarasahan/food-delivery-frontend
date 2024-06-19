@@ -8,6 +8,8 @@ import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 
+
+
 function App() {
   const [showLogin, setShowLogin] = useState(false);
 
